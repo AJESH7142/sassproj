@@ -1,0 +1,78 @@
+@import './config';
+@import './home';
+@import './menu';
+@import './about';
+@import './projects';
+@import './contact';
+@import './responsive';
+body{
+    background: $primary-color;
+    color: set-text-color($primary-color);
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1;
+}
+@for $i from 1 through 3{
+    h#{$i}{
+        font-weight: main-weight(light);
+    }
+}
+a{
+    color: set-text-color($primary-color);
+    text-decoration: none;
+}
+
+.text-secondary{
+    color: $secondary-color;
+}
+header{
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    padding: 1rem;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+
+    .social-icons{
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+
+        a{
+            // display: flex;
+            // flex-direction: row;
+            position: relative;
+            padding: 0.4rem;
+            @include transition-ease;
+            &:hover{
+                color: $secondary-color;
+                // div{
+                //     left: 10;
+                //     opacity: 1;
+                //     color: white;
+                // }
+            }
+            // div{
+            //     background: $secondary-color;
+            //     padding: 7px 4px 8px 4px;
+            //     position: absolute;
+            //     left: 100%;
+            //     opacity: 0;
+            //     pointer-events: none;
+            //     @include transition-ease
+            // }
+        }
+    }
+}
+footer{
+    font-size: 1rem;
+    position: fixed;
+    bottom: .4rem;
+    right: 1rem;
+    text-align: right;
+    padding: 1rem;
+    color: set-text-color($primary-color);
+}

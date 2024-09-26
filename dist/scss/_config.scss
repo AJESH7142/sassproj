@@ -1,0 +1,48 @@
+$primary-color:#272727;
+$secondary-color:#ff652f;
+$teritiary-color:rgba(255, 252, 60, 0.831);
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+$fontweights:(
+    "extralight":300,
+    "light":400,
+    "normal":700,
+    "bold":900
+);
+
+@function main_weight($input_weight){
+    @return map-get($fontweights , $input_weight )
+};
+
+@mixin transition-ease{
+    transition: all 0.5s ease-in-out;
+};
+
+@function  set-text-color($color){
+    @if (lightness($color) > 40%){
+        @return #000;
+    }
+    @else{
+        @return #fff;
+    }
+};
+
+@mixin media-md {
+    @media screen and (min-width:768px) {
+        @content;
+    }
+}
+@mixin media-lg {
+    @media screen and (min-width:1024px) {
+        @content;
+    }
+}
+@mixin media-xl {
+    @media screen and (min-width:1600px) {
+        @content;
+    }
+}
